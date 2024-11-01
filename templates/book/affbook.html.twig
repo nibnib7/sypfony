@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nombre de Livres Romance</title>
+</head>
+<body>
+    <h1>Nombre de Livres dans la Catégorie « Romance »</h1>
+    <p>Il y a {{ romanceBookCount }} livre(s) dans la catégorie « Romance ».</p> <!-- Use the correct variable here -->
+    
+    {% if books is not empty %}
+        <ul>
+            {% for book in books %}
+                <li>{{ book.tirle }}</li> {# Assuming 'title' is a property of your Book entity #}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun livre trouvé dans cette catégorie.</p>
+    {% endif %}
+</body>
+</html>
